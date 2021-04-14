@@ -1,3 +1,4 @@
-[debug] not up to date. inChanged = true, force = false
-[debug] Updating ProjectRef(uri("file:/home/ml/Documents/Github/Scala_API_Projet/"), "scala_api_projet")...
-[debug] Done updating ProjectRef(uri("file:/home/ml/Documents/Github/Scala_API_Projet/"), "scala_api_projet")
+[warn] scala-library-2.12.13-sources.jar no longer exists at /home/ml/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.13/scala-library-2.12.13-sources.jar
+[debug] not up to date. inChanged = false, force = false
+[debug] Updating ProjectRef(uri("file:/Users/mouna/Scala_API_Projet/"), "scala_api_projet")...
+[debug] Done updating ProjectRef(uri("file:/Users/mouna/Scala_API_Projet/"), "scala_api_projet")
