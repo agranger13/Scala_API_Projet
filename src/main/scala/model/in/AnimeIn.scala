@@ -1,7 +1,7 @@
 package model.in
 
 case class AnimeIn(
-                mal_id: String,
+                mal_id: Int,
                 title: String,
                 synopsis: String,
                 status: String,
@@ -12,9 +12,11 @@ case class AnimeIn(
                 popularity: Int,
                 favorites :Int,
                 premiered: String,
+                published: Array[String],
                 Adaptation: Array[Int],
                 studios: Array[Int],
-                genres: Array[Int]
+                genres: Array[Int],
+                recommendation: Array[Int]
                 )
 
 // MangaIn
@@ -23,4 +25,4 @@ case class AnimeIn(
 // UserIn
 // SeasonIn
 // AuthorIn
-//
+
