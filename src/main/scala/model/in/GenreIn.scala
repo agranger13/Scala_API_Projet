@@ -5,5 +5,5 @@ case class GenreIn(
                     typeg : String,
                     name : String,
                     item_count : Int,
-                    anime : Array[Int]
+                    anime : Array[String]
                   )
