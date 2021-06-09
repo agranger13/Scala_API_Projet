@@ -13,8 +13,8 @@ case class AnimeIn(
                 favorites :Int  = -1,
                 premiered: String  = "",
                 aired: Aired  = null,
-                Adaptation: Array[MangaIn]  = Array[MangaIn](),
+//                Adaptation: Array[MangaIn]  = Array[MangaIn](),
 //                studios: Array[Int]  = None,
-                genres: Array[GenreIn]  = Array[GenreIn]()
+               genres: Array[GenreInfo]  = Array[GenreInfo]()
                 )
 
