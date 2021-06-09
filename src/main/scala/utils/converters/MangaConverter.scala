@@ -1,7 +1,7 @@
 package utils.converters
 
 import model.in.{AnimeIn, MangaIn}
-import model.out.{Anime, Manga}
+import model.out.{Anime, Genre, Manga}
 
 import java.sql.Timestamp
 
@@ -17,12 +17,10 @@ object MangaConverter extends Converter[MangaIn, Manga] {
       rank = input.rank,
       popularity = input.popularity,
       favorites = input.favorites,
-      adaptation = input.Adaptation,
-      authors = input.authors,
-      genres = input.genres,
-      recommendation = input.recommendation,
-      published_from = Timestamp.valueOf(input.published(0)),
-      published_to = Timestamp.valueOf(input.published(1))
+      adaptation = input.Adaptation.foldLeft(new Array[Int](input.Adaptation.length))((list,x)=> list :+ x.mal_id),
+      genres = input.genres.foldLeft(new Array[Int](input.genres.length))((list,x)=> list :+ x.mal_url.mal_id),
+      published_from = Timestamp.valueOf(input.aired.from),
+      published_to = Timestamp.valueOf(input.aired.from)
     )
   }
 }

@@ -15,7 +15,5 @@ case class Manga(
                  popularity: Int,
                  favorites :Int,
                  adaptation: Array[Int],
-                 authors: Array[Int],
                  genres: Array[Int],
-                 recommendation: Array[Int]
                 )

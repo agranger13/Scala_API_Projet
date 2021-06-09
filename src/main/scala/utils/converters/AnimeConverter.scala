@@ -1,7 +1,7 @@
 package utils.converters
 
 import model.in.AnimeIn
-import model.out.Anime
+import model.out.{Anime, Genre}
 
 import java.sql.Timestamp
 import java.text.SimpleDateFormat
@@ -21,12 +21,10 @@ object AnimeConverter extends Converter[AnimeIn, Anime] {
       popularity = input.popularity,
       favorites = input.favorites,
       season = input.premiered,
-      adaptation = input.Adaptation,
-      studios = input.studios,
-      genres = input.genres,
-      recommendation = input.recommendation,
-      published_from = Timestamp.valueOf(input.published(0)),
-      published_to = Timestamp.valueOf(input.published(1))
+      adaptation = input.Adaptation.foldLeft(new Array[Int](input.Adaptation.length))((list,x)=> list :+ x.mal_id),
+      genres = input.genres.foldLeft(new Array[Int](input.genres.length))((list,x)=> list :+ x.mal_url.mal_id),
+      published_from = Timestamp.valueOf(input.aired.from),
+      published_to = Timestamp.valueOf(input.aired.to)
     )
   }
 }

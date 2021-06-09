@@ -17,7 +17,4 @@ case class Anime(
                   published_from: Timestamp,
                   published_to: Timestamp,
                   adaptation: Array[Int],
-                  studios: Array[Int],
-                  genres: Array[Int],
-                  recommendation: Array[Int]
-                )
+                  genres: Array[Int])
