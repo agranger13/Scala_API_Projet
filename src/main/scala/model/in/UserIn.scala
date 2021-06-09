@@ -6,5 +6,4 @@ case class UserIn(
                  gender : String,
                  birthday : String,
                  location : String,
-                 
                  )
