@@ -1,11 +1,13 @@
 package utils.handlers
 
-trait IOReader[T]{
+trait IOReader{
   def read(url: String): String
 }
 
-trait IOApiReader[T] extends IOReader[T]{
-  override def read(url: String): String = ???
+trait IOApiReader extends IOReader{
+  override def read(url: String): String
 }
 
-abstract class AbstractApiReader[T] extends IOApiReader[T]
+object AbstractApiReader extends IOApiReader {
+  override def read(url: String): String = ???
+}
