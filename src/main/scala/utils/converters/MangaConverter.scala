@@ -5,7 +5,7 @@ import model.out.{Anime, Manga}
 
 import java.sql.Timestamp
 
-class MangaConverter extends Converter[MangaIn, Manga] {
+object MangaConverter extends Converter[MangaIn, Manga] {
   override def convert(input: MangaIn): Manga = {
     Manga(
       id = input.mal_id,

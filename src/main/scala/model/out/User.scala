@@ -1,9 +1,9 @@
-package model.in
+package model.out
 
-case class UserIn(
-                 user_id : Int,
+case class User(
+                 id : Int,
                  username : String,
                  gender : String,
                  birthday : String,
                  location : String,
-                 )
+               )
