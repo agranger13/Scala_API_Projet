@@ -1,4 +1,4 @@
-package utils
+package utils.handlers
 
 trait IOReader[T]{
   def read(url: String): String
