@@ -1,6 +1,6 @@
 package model.in
 
 case class FavoritesIn(
-                      anime : Array[AnimeIn] = Array[AnimeIn](),
-                      manga : Array[MangaIn] = Array[MangaIn]()
+                      anime : Array[Id_Type_Name] = Array[Id_Type_Name](),
+                      manga : Array[Id_Type_Name] = Array[Id_Type_Name]()
                     )

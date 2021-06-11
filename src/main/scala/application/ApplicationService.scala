@@ -4,25 +4,23 @@ import io.circe._
 import io.circe.generic.auto._
 import io.circe.parser._
 import io.circe.syntax._
-import model.in.{AnimeIn, GenreIn}
-import utils.converters.AnimeConverter
+import model.in.{AnimeIn, GenreIn, MangaIn}
+import utils.converters.{AnimeConverter, MangaConverter}
 
 object ApplicationService {
   def process() = {
     // Logique de l'application
-    val url = "https://api.jikan.moe/v3/anime/1"
+    val url = "https://api.jikan.moe/v3/manga/1"
 
     // Lire les données => API ou Fichier
     val result = Source.fromURL(url).mkString
-
-    // Convertir et parser les données
     println(parse(result))
 
-    val decodedAnime = decode[AnimeIn](result)
-    println(decodedAnime.toSeq(0))
-
-    val Anime = AnimeConverter.convert(decodedAnime.toSeq(0))
-    println(Anime)
+    // Convertir et parser les données
+    val decodedManga = decode[MangaIn](result)
+    println(decodedManga)
+    val Manga = MangaConverter.convert(decodedManga.toSeq(0))
+    println(Manga)
   }
 }
 //Anime

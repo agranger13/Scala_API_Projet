@@ -6,7 +6,7 @@ case class Manga(
                  id: Int,
                  title: String,
                  synopsis: String,
-                 publishing: String,
+                 publishing: Boolean,
                  published_from: Timestamp,
                  published_to: Timestamp,
                  score: Double,

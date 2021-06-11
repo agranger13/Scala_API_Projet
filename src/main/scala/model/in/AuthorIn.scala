@@ -5,5 +5,5 @@ case class AuthorIn(
                    name: String = "",
                    member_favorites: Int = -1,
                    about: String = "",
-                   published_manga: Array[MangaIn]  = Array[MangaIn]()
+                   published_manga: Array[Id_Type_Name]  = Array[Id_Type_Name]()
                    )

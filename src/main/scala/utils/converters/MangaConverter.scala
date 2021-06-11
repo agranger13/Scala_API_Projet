@@ -19,8 +19,8 @@ object MangaConverter extends Converter[MangaIn, Manga] {
       favorites = input.favorites,
       adaptation = input.related.Adaptation.foldLeft(new Array[Int](input.related.Adaptation.length))((list,x)=> list :+ x.mal_id),
       genres = input.genres.foldLeft(new Array[Int](input.genres.length))((list,x)=> list :+ x.mal_id),
-      published_from = Timestamp.valueOf(input.aired.from.substring(0,19).replace("T", " ")),
-      published_to = Timestamp.valueOf(input.aired.to.substring(0,19).replace("T", " "))
+      published_from = Timestamp.valueOf(input.published.from.substring(0,19).replace("T", " ")),
+      published_to = Timestamp.valueOf(input.published.to.substring(0,19).replace("T", " "))
     )
   }
 }
