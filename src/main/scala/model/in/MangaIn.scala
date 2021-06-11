@@ -11,7 +11,7 @@ case class MangaIn(
                   rank: Int = -1,
                   popularity: Int = -1,
                   favorites :Int = -1,
-                  Adaptation: Array[AnimeIn] = Array[AnimeIn](),
-//                  authors: Array[AuthorIn] = null,
+                  related: RelatedMangaIn,
+                  authors: Array[AuthorIn] = Array[AuthorIn](),
                   genres: Array[GenreIn]  = Array[GenreIn]()
                   )

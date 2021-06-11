@@ -12,9 +12,7 @@ object ApplicationService {
     val url = "https://api.jikan.moe/v3/anime/1"
     val result = Source.fromURL(url).mkString
     println(result)
-    // Lire les données => API ou Fichier
     println(parse(result))
-
     val decodedFoo = decode[AnimeIn](result)
     println(decodedFoo)
     decodedFoo.toSeq(0)
@@ -24,3 +22,7 @@ object ApplicationService {
     // Envoyer les données sur notre BDD
   }
 }
+//Anime
+//Manga
+//Genre
+//Season
