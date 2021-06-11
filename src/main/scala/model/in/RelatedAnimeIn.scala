@@ -1,5 +1,5 @@
 package model.in
 
 case class RelatedAnimeIn(
-                         adaptation: Array[AdaptationMangaIn]  = Array[AdaptationMangaIn]()
+                         Adaptation: Array[AdaptationAnimeIn]  = Array[AdaptationAnimeIn]()
                          )

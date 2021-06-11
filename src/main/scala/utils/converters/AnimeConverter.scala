@@ -21,10 +21,10 @@ object AnimeConverter extends Converter[AnimeIn, Anime] {
       popularity = input.popularity,
       favorites = input.favorites,
       season = input.premiered,
-//      adaptation = input.Adaptation.foldLeft(new Array[Int](input.Adaptation.length))((list,x)=> list :+ x.mal_id),
+      adaptation = input.related.Adaptation.foldLeft(new Array[Int](input.related.Adaptation.length))((list,x)=> list :+ x.mal_id),
       genres = input.genres.foldLeft(new Array[Int](input.genres.length))((list,x)=> list :+ x.mal_id),
-      published_from = Timestamp.valueOf(input.aired.from),
-      published_to = Timestamp.valueOf(input.aired.to)
+      published_from = Timestamp.valueOf(input.aired.from.substring(0,19).replace("T", " ")),
+      published_to = Timestamp.valueOf(input.aired.to.substring(0,19).replace("T", " "))
     )
   }
 }

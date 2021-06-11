@@ -1,7 +1,7 @@
 package model.out
 
 case class Author(
-             id: String,
+             id: Int,
              name: String,
              member_favorites: Int,
              about: String,

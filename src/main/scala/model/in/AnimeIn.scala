@@ -14,7 +14,7 @@ case class AnimeIn(
                 premiered: String  = "",
                 aired: Aired  = null,
                 related: RelatedAnimeIn,
-                studio: Array[StudioIn]  = Array[StudioIn](),
-                genres: Array[GenreIn]  = Array[GenreIn]()
+                studios: Array[StudioIn]  = Array[StudioIn](),
+                genres: Array[GenreInfo]  = Array[GenreInfo]()
                 )
 

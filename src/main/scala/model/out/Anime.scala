@@ -16,6 +16,6 @@ case class Anime(
                   season: String,
                   published_from: Timestamp,
                   published_to: Timestamp,
-//                  adaptation: Array[Int],
+                  adaptation: Array[Int],
                   genres: Array[Int]
                   )

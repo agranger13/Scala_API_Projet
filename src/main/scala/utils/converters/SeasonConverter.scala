@@ -7,7 +7,7 @@ object SeasonConverter extends Converter[SeasonIn, Season] {
     Season(
       season_name = input.season_name,
       season_year = input.season_year,
-      anime_season = input.anime
+      anime_season = input.anime.foldLeft(new Array[Int](input.anime.length))((list,x)=> list :+ x.mal_id)
     )
   }
 }

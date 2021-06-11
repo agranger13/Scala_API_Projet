@@ -13,5 +13,5 @@ case class MangaIn(
                   favorites :Int = -1,
                   related: RelatedMangaIn,
                   authors: Array[AuthorIn] = Array[AuthorIn](),
-                  genres: Array[GenreIn]  = Array[GenreIn]()
+                  genres: Array[GenreInfo]  = Array[GenreInfo]()
                   )
