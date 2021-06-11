@@ -15,7 +15,7 @@ object ApplicationService {
     // Lire les données => API ou Fichier
     println(parse(result))
 
-    val decodedFoo = decode[GenreIn](result)
+    val decodedFoo = decode[AnimeIn](result)
     println(decodedFoo)
     decodedFoo.toSeq(0)
 
