@@ -1,6 +1,6 @@
 package model.in
 
-case class Aired(
+case class Aired (
                   from:String,
                   to:String
                 )
