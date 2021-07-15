@@ -5,5 +5,5 @@ case class Author(
              name: String,
              member_favorites: Int,
              about: String,
-             published_manga: Array[Int]
+             published_manga: Seq[Int]
            )

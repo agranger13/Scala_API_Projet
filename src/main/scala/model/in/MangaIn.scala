@@ -1,4 +1,5 @@
 package model.in
+import io.circe.generic.extras.Configuration
 
 case class MangaIn(
                   mal_id: Int,
@@ -11,7 +12,10 @@ case class MangaIn(
                   rank: Int = -1,
                   popularity: Int = -1,
                   favorites :Int = -1,
-                  related: Related,
+                  related: Option[Related],
                   authors: Array[Id_Type_Name] = Array[Id_Type_Name](),
                   genres: Array[Id_Type_Name]  = Array[Id_Type_Name]()
-                  ) extends ModelIN
+                  )
+object MangaIn{
+  implicit val configuration: Configuration = Configuration.default.withDefaults
+}

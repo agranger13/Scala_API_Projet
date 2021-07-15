@@ -7,7 +7,7 @@ object GenreConverter extends Converter[GenreIn, Genre] {
 
   override def convert(input: GenreIn): Genre = {
     Genre(
-      mal_id = input.mal_url.mal_id,
+      id = input.mal_url.mal_id,
       typeg = input.mal_url.`type`,
       name = input.mal_url.name,
       item_count = input.item_count

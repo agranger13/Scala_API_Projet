@@ -11,5 +11,15 @@ trait IOApiReader extends IOReader{
 }
 
 object AbstractApiReader extends IOApiReader {
-  override def read(url: String): String = requests.get(url).text()
+  override def read(url: String): String = {
+    // Permet de bypass la limite de requete (2 requetes/sec)
+    Thread.sleep(1500)
+    try{
+      val r = requests.get(url)
+      r.text()
+    }catch{
+      case e: Exception => println(e)
+        "error"
+    }
+  }
 }

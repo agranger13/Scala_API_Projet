@@ -11,7 +11,7 @@ object AuthorConverter extends Converter[AuthorIn, Author] {
       member_favorites = 0,
       about = input.about,
 
-      published_manga = input.published_manga.foldLeft(new Array[Int](input.published_manga.length))((list,x)=> list :+ x.manga.mal_id)
+      published_manga = input.published_manga.foldLeft(Seq[Int](input.published_manga.length))((list,x)=> list :+ x.manga.mal_id)
     )
 
 }

@@ -6,4 +6,4 @@ case class AuthorIn(
                    member_favorites: Int = -1,
                    about: String = "",
                    published_manga: Array[OeuvreIn] = Array[OeuvreIn]()
-                   ) extends ModelIN
+                   )

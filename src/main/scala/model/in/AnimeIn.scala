@@ -16,5 +16,5 @@ case class AnimeIn(
                     related: Related,
                     studios: Array[Id_Type_Name]  = Array[Id_Type_Name](),
                     genres: Array[Id_Type_Name]  = Array[Id_Type_Name]()
-                ) extends ModelIN
+                )
 
