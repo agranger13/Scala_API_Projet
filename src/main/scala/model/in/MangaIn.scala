@@ -16,6 +16,3 @@ case class MangaIn(
                   authors: Array[Id_Type_Name] = Array[Id_Type_Name](),
                   genres: Array[Id_Type_Name]  = Array[Id_Type_Name]()
                   )
-object MangaIn{
-  implicit val configuration: Configuration = Configuration.default.withDefaults
-}

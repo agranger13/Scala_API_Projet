@@ -8,20 +8,25 @@ object ApplicationService {
     // Logique de l'application
     val conf = ApplicationConfiguration
 
-    val url_season = conf.base_url + "season/" + "2021/summer"
+    val url_season = conf.base_url + "season/"
     val url_anime = conf.base_url + "anime/"
     val url_author = conf.base_url + "person/"
     val url_manga = conf.base_url + "manga/"
     val url_genre = conf.base_url + "genre/"
 
-    val resultApiSeason = AbstractApiReader.read(url_season)
-    if(resultApiSeason != "error") {
-      val resultObjSeason = AbstractApiConverter.convert[SeasonIn, Season](resultApiSeason)
-      println("\nresult : ")
-      println(resultObjSeason)
-      println(WriteToMongoDB.write[Season](resultObjSeason))
-    }
-    (1 to 30).foreach(i=>{
+    (2000 to 2021).foreach(annee=>{
+      Array("summer","winter","spring","fall").foreach(season=>{
+        val resultApiSeason = AbstractApiReader.read(url_season + annee + "/" + season)
+        if(resultApiSeason != "error") {
+          val resultObjSeason = AbstractApiConverter.convert[SeasonIn, Season](resultApiSeason)
+          println("\nresult : ")
+          println(resultObjSeason)
+          println(WriteToMongoDB.write[Season](resultObjSeason))
+        }
+      })
+    })
+
+    (1 to 500).foreach(i=>{
       val resultApiManga = AbstractApiReader.read(url_manga + i)
       if(resultApiManga != "error") {
         val resultObjManga = AbstractApiConverter.convert[MangaIn,Manga](resultApiManga)
@@ -30,7 +35,7 @@ object ApplicationService {
         println(WriteToMongoDB.write[Manga](resultObjManga))
       }
     })
-    (1 to 30).foreach(i=> {
+    (1 to 500).foreach(i=> {
       val resultApiAnime = AbstractApiReader.read(url_anime+i)
       if(resultApiAnime != "error") {
         val resultObjAnime = AbstractApiConverter.convert[AnimeIn, Anime](resultApiAnime)
@@ -39,7 +44,7 @@ object ApplicationService {
         println(WriteToMongoDB.write[Anime](resultObjAnime))
       }
     })
-    (1 to 30).foreach(i=> {
+    (1 to 500).foreach(i=> {
       val resultApiAuthor = AbstractApiReader.read(url_author+i)
       if(resultApiAuthor != "error") {
         val resultObjAuthor = AbstractApiConverter.convert[AuthorIn, Author](resultApiAuthor)
@@ -48,7 +53,7 @@ object ApplicationService {
         println(WriteToMongoDB.write[Author](resultObjAuthor))
       }
     })
-    (1 to 30).foreach(i=> {
+    (1 to 150).foreach(i=> {
       val resultApiGenre = AbstractApiReader.read(url_genre + "anime/" + i)
       if(resultApiGenre != "error") {
         val resultObjGenre = AbstractApiConverter.convert[GenreIn, Genre](resultApiGenre)
@@ -57,7 +62,7 @@ object ApplicationService {
         println(WriteToMongoDB.write[Genre](resultObjGenre))
       }
     })
-    (1 to 30).foreach(i=> {
+    (1 to 150).foreach(i=> {
       val resultApiGenre = AbstractApiReader.read(url_genre + "manga/" + i)
       if(resultApiGenre != "error") {
         val resultObjGenre = AbstractApiConverter.convert[GenreIn, Genre](resultApiGenre)

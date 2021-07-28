@@ -1,5 +1,7 @@
 package application
 
 object Application {
-  ApplicationService.process()
+  def main(args: Array[String]): Unit = {
+    ApplicationService.process()
+  }
 }
